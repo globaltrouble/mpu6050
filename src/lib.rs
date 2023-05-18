@@ -406,7 +406,7 @@ where
     }
 
     /// Read bit n from register
-    fn read_bit(&mut self, reg: u8, bit_n: u8) -> Result<u8, Mpu6050Error<E>> {
+    pub fn read_bit(&mut self, reg: u8, bit_n: u8) -> Result<u8, Mpu6050Error<E>> {
         let mut byte: [u8; 1] = [0; 1];
         self.read_bytes(reg, &mut byte)?;
         Ok(bits::get_bit(byte[0], bit_n))

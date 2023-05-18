@@ -230,6 +230,49 @@ impl MOT_DETECT_CONTROL {
 
 #[allow(non_camel_case_types)]
 #[derive(Copy, Clone, Debug)]
+/// Register 106: User Control, Section 4.27 from MPU6000 register map
+pub struct USR_CNTRL;
+
+impl USR_CNTRL {
+    // Register address
+    pub const ADDR: u8 = 0x6a;
+    
+    // When set to 1, this bit enables FIFO operations.
+    // When this bit is cleared to 0, the FIFO buffer is disabled. The FIFO buffer
+    // cannot be written to or read from while disabled.
+    // The FIFO buffer’s state does not change unless the MPU-60X0 is power
+    // cycled.
+    pub const FIFO_EN: u8 = 6;
+
+    // When set to 1, this bit enables I C Master Mode.
+    // When this bit is cleared to 0, the auxiliary I C bus lines (AUX_DA and
+    // AUX_CL) are logically driven by the primary I C bus (SDA and SCL).
+    pub const I2C_MST_EN: u8 = 5;
+
+    // MPU-6000: When set to 1, this bit disables the primary I C interface and
+    // enables the SPI interface instead.
+    // MPU-6050: Always write this bit as zero.
+    pub const I2C_IF_DIS: u8 = 4;
+
+    // This bit resets the FIFO buffer when set to 1 while FIFO_EN equals 0. This
+    // bit automatically clears to 0 after the reset has been triggered.
+    pub const FIFO_RESET: u8 = 2;
+
+    // This bit resets the I C Master when set to 1 while I2C_MST_EN equals 0.
+    // This bit automatically clears to 0 after the reset has been triggered.
+    pub const I2C_MST_RESET: u8 = 1;
+
+    // When set to 1, this bit resets the signal paths for all sensors (gyroscopes,
+    // accelerometers, and temperature sensor). This operation will also clear the
+    // sensor registers. This bit automatically clears to 0 after the reset has been
+    // triggered.
+    // When resetting only the signal path (and not the sensor registers), please
+    // use Register 104, SIGNAL_PATH_RESET.
+    pub const SIG_COND_RESET: u8 = 0;
+}
+
+#[allow(non_camel_case_types)]
+#[derive(Copy, Clone, Debug)]
 /// Register 107: Power Management 1
 pub struct PWR_MGMT_1;
 
