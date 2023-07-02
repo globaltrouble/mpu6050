@@ -42,17 +42,17 @@ pub const MOT_THR: u8 = 0x1F;
 /// Motion Duration Detection Register
 pub const MOT_DUR: u8 = 0x20;
 /// High Byte Register Gyro x orientation
-pub const GYRO_REGX_H: u8 = 0x43;
+pub const GYRO_REGX_H: u8 = 0x3b;
 /// High Byte Register Gyro y orientation
-pub const GYRO_REGY_H: u8 = 0x45;
+pub const GYRO_REGY_H: u8 = 0x3d;
 /// High Byte Register Gyro z orientation
-pub const GYRO_REGZ_H: u8 = 0x47;
+pub const GYRO_REGZ_H: u8 = 0x3f;
 /// High Byte Register Calc roll
-pub const ACC_REGX_H: u8 = 0x3b;
+pub const ACC_REGX_H: u8 = 0x43;
 /// High Byte Register Calc pitch
-pub const ACC_REGY_H: u8 = 0x3d;
+pub const ACC_REGY_H: u8 = 0x45;
 /// High Byte Register Calc yaw
-pub const ACC_REGZ_H: u8 = 0x3f;
+pub const ACC_REGZ_H: u8 = 0x47;
 /// High Byte Register Temperature
 pub const TEMP_OUT_H: u8 = 0x41;
 /// Slave address of Mpu6050
