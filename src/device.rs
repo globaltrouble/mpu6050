@@ -68,6 +68,24 @@ pub struct BitBlock {
 
 #[allow(non_camel_case_types)]
 #[derive(Copy, Clone, Debug)]
+/// Register 25: Configuration (DLPF, External signal)
+pub struct SMPLRT_DIV;
+
+impl SMPLRT_DIV {
+    pub const ADDR: u8 = 0x19;
+}
+
+#[allow(non_camel_case_types)]
+#[derive(Copy, Clone, Debug)]
+/// Register 35: Configuration (FIFO_EN)
+pub struct FIFO_EN;
+
+impl FIFO_EN {
+    pub const ADDR: u8 = 0x23;
+}
+
+#[allow(non_camel_case_types)]
+#[derive(Copy, Clone, Debug)]
 /// Register 26: Configuration (DLPF, External signal)
 pub struct CONFIG;
 
